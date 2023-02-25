@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="login">
+    <div class="container">
+        <div class="row">
+            <div class="offset-1 col-4">
+                <div class="login__wrapper">
+                    <h2 class="login__title">Авторизация</h2>
+                    <form method="post" class="login__form form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="form__button button">Войти</button>
+                    </form>
+                </div>
+            </div>
+            <div class="offset-1 col-5">
+                <div class="login__wrapper">
+                    <h2 class="login__title">Регистрация</h2>
+                    <form action="#" class="login__form form">
+                        <div class="form__field">
+                            <label for="username" class="form__label" hidden>Имя пользователя</label>
+                            <input required type="text" id="username" name="username" class="form__input" placeholder="Имя пользователя">
+                        </div>
+                        <div class="form__field">
+                            <label for="email" class="form__label" hidden>Email</label>
+                            <input required type="text" id="email" name="email" class="form__input" placeholder="Email">
+                        </div>
+                        <div class="form__field">
+                            <label for="password" class="form__label" hidden>Пароль</label>
+                            <input required type="password" id="password" name="password" class="form__input" placeholder="Пароль">
+                        </div>
+                        <div class="form__field">
+                            <label for="password2" class="form__label" hidden>Повторите пароль</label>
+                            <input required type="password" id="password2" name="password2" class="form__input" placeholder="Повторите пароль">
+                        </div>
+                        <button class="form__button button">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

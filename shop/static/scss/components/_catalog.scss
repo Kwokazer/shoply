@@ -1,0 +1,16 @@
+.catalog {
+    &__header {
+        margin-bottom: 30px;
+    }
+
+    &__title {    
+        font-size: 18px;
+        font-weight: 400;
+        color: #465b52;
+    }
+
+    &__count {
+        color: #088178;
+        font-weight: bold;
+    }
+}

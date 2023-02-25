@@ -1,0 +1,53 @@
+.account {
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e2e9e1;
+    }
+
+    &__item:not(:last-child) {
+        border-bottom: 1px solid #e2e9e1;
+    }
+
+    &__link {
+        font-size: 14px;
+        color: #242424;
+        padding: 15px 30px;
+        transition: color .5s ease, background-color .5s ease;
+        display: inline-block;
+        width: 100%;
+
+        &:hover, &.active {
+            color: #fff;
+            background-color: #088178;
+        }
+    }
+
+    &__tab {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e2e9e1;
+        border-radius: 5px;
+    }
+
+    &__tab-header {
+        padding: 15px;
+        background-color: #f7f8f9;
+        border-bottom: 1px solid #e2e9e1;
+    }
+
+    &__tab-title {
+        color: #222222;
+        font-weight: bold;
+    }
+
+    &__body {
+        padding: 15px;
+    }
+
+    .table {
+        th, td {
+            border: 1px solid #e2e9e1;
+        }
+    }
+}

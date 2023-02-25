@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load shoply_tags %}
+{% block content %}
+<section class="product-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="product-info__preview">
+                    <img src="{{ product.photo.url }}" alt="{{ product.name }}" class="product-info__image">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="product-info__details">
+                    <h1 class="product-info__title">{{ product.name }}</h1>
+                    <p class="product-info__category">Категории: {% join_items product.category %}</p>
+                    <div class="product-info__price">
+                        <span>{{ product.price }} руб.</span>
+                    </div>
+                    <p class="product-info__description">{{ product.description }}</p>
+                    <ul class="product-info__components">
+                        {% for component in product.component.all %}
+                            <li class="product-info__component">{{ component }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="product-info__configuration">
+                        <strong>Размер</strong>
+                        <ul class="product-info__sizes">
+                            <li class="product-info__size">
+                                <a href="#">S</a>
+                            </li>
+                            <li class="product-info__size">
+                                <a href="#">M</a>
+                            </li>
+                            <li class="product-info__size">
+                                <a href="#">L</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-info__actions">
+                        <label for="count" class="product-info__label" hidden>Количество</label>
+                        <input type="number" name="count" min="1" value="1" id="count" class="product-info__count">
+                        <a href="#" class="product-info__button button">Добавить в корзину</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

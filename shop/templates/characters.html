@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load shoply_tags %}
+{% block content %}
+ <section class="catalog">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="catalog__header">
+                        <p class="catalog__title">Голосуйте и влияйте на тренды!</p>
+                    </div>
+                    <div class="catalog__list row">
+                        {% for character in characters %}
+                        <div class="col-3">
+                            <div class="catalog__item product">
+                                <div class="product__image">
+                                    <img src="{{ character.photo.url }}" alt="{{ character.name }}" class="product__img">
+                                </div>
+                                <div class="product__content">
+                                    <p class="product__category">
+                                         {{ character.user.username }}
+                                    </p>
+                                    <a href="#" class="product__name">{{ character.name }}</a>
+                                    <form class="product__form form">
+                                        <div class="form__field">
+                                            <label for="rate" class="form__label">Ваш голос</label>
+                                            <select name="rate" id="rate" class="form__input">
+                                                <option value="1" selected>Плохо</option>
+                                                <option value="2">Пойдет</option>
+                                                <option value="3">Средне</option>
+                                                <option value="4">Хорошо</option>
+                                                <option value="5">Отлично</option>
+                                            </select>
+                                        </div>
+                                        <button class="product__button button">Проголосовать</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                       {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="advertisements">
+            <div class="container">
+                <div class="row">
+                    {% for advertisement in advertisements %}
+                        <div class="col-4">
+                            <a href="{{ advertisement.link }}" class="advertisement">
+                                <div class="advertisement__preview">
+                                    <img src="{{ advertisement.photo.url }}" alt="{{ advertisement.title }}" class="advertisement__image">
+                                </div>
+                                <div class="advertisement__content">
+                                    <p class="advertisement__title">{{ advertisement.title }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+{% endblock %}
+

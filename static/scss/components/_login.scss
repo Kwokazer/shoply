@@ -1,0 +1,29 @@
+.login {
+    &__wrapper {
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #e2e9e1;
+    }
+
+    &__title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    input {
+        border: 1px solid #e2e9e1;
+        border-radius: 4px;
+        height: 45px;
+        box-shadow: none;
+        padding-left: 20px;
+        font-size: 16px;
+        color: #161c27;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}

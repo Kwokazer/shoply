@@ -1,0 +1,39 @@
+.advertisement {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #eef1ee;
+    display: inline-block;
+    width: 100%;
+    transition: transform .25s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__preview {
+        height: 270px;
+        width: 100%;
+    }
+    
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #222222;
+        transition: color .5s ease;
+
+        &:hover {
+            color: #088178;
+        }
+    }
+}

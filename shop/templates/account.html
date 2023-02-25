@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="account">
+    <div class="container">
+        <div class="row">
+            <div class="offset-1 col-3">
+                <ul class="account__menu">
+                    <li class="account__item">
+                        <a href="{% url 'account' %}" class="account__link active">Личная информация</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'orders' %}" class="account__link">Заказы</a>
+                    </li>
+                     <li class="account__item">
+                        <a href="{% url 'advertisement' %}" class="account__link">Реклама</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'logout' %}" class="account__link">Выйти из аккаунта</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <div class="account__tab">
+                    <div class="account__tab-header">
+                        <p class="account__tab-title">Личная информация</p>
+                    </div>
+                    <div class="account__body">
+                        <form action="#" class="account__form form">
+                            <div class="form__field">
+                                <label for="first" class="form__label">Ваше имя</label>
+                                <input required type="text" id="first" name="first" class="form__input" value="{{ request.user.first_name }}">
+                            </div>
+                            <div class="form__field">
+                                <label for="second" class="form__label">Ваша фамилия</label>
+                                <input required type="text" id="second" name="second" class="form__input" value="{{ request.user.last_name }}">
+                            </div>
+                            <div class="form__field">
+                                <label for="email" class="form__label">Вам Email</label>
+                                <input required type="email" id="email" name="email" class="form__input" value="{{ request.user.email }}">
+                            </div>
+                            <div class="form__field">
+                                <label for="new-password" class="form__label">Новый пароль</label>
+                                <input required type="password" id="new-password" name="new-password" class="form__input">
+                            </div>
+                            <div class="form__field">
+                                <label for="password" class="form__label">Старый пароль</label>
+                                <input required type="password" id="password" name="password" class="form__input">
+                            </div>
+                            <button class="form__button button">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

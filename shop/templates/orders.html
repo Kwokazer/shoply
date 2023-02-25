@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="account">
+    <div class="container">
+        <div class="row">
+            <div class="offset-1 col-3">
+                <ul class="account__menu">
+                    <li class="account__item">
+                        <a href="{% url 'account' %}" class="account__link">Личная информация</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'orders' %}" class="account__link active">Заказы</a>
+                    </li>
+                     <li class="account__item">
+                        <a href="{% url 'advertisement' %}" class="account__link">Реклама</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'logout' %}" class="account__link">Выйти из аккаунта</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <div class="account__tab">
+                    <div class="account__tab-header">
+                        <p class="account__tab-title">Заказы</p>
+                    </div>
+                    <div class="account__body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Заказ</th>
+                                    <th>Дата</th>
+                                    <th>Статус</th>
+                                    <th>Стоимость</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr>
+                                        <td>#{{ order.id }}</td>
+                                        <td>{{ order.created_at|date:"j.m.Y" }}</td>
+                                        <td>{{ order.status }}</td>
+                                        <td>{{ order.total  }} руб. за {{ order.products.all.count }} предметов</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

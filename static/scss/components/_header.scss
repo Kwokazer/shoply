@@ -1,0 +1,51 @@
+.header {
+    padding-top: 25px;
+    border-bottom: 1px solid #e2e9e1;
+
+    &__logo {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    &__input {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 0;
+        background-color: #fff;
+        border: none;
+        height: 45px;
+        outline: none;
+        border-bottom: 3px solid #414648;
+        font-size: 16px;
+        padding-left: 35px;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    &__action {
+        color: #1a1a1a;
+    }
+
+    &__menu {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 60px;
+        transition: color .5s ease;
+        
+        &:hover {
+            color: #088178;
+        }
+    }
+}

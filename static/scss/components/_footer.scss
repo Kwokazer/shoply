@@ -1,0 +1,38 @@
+.footer {
+    padding: 25px 0;
+    border-top: 1px solid #e2e9e1;
+
+    &__logo {
+        display: inline-block;
+        margin-bottom: 30px;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    &__info {
+        color: #465b52;
+        margin-bottom: 5px;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #222222;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__link {
+        transition: color .5s ease;
+        font-size: 600;
+
+        &:hover {
+            color: #465b52;
+        }
+    }
+}

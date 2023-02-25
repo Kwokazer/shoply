@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="account advertisement-page">
+    <div class="container">
+        <div class="row">
+            <div class="offset-1 col-3">
+                <ul class="account__menu">
+                    <li class="account__item">
+                        <a href="{% url 'account' %}" class="account__link">Личная информация</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'orders' %}" class="account__link">Заказы</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'advertisement' %}" class="account__link active">Реклама</a>
+                    </li>
+                    <li class="account__item">
+                        <a href="{% url 'logout' %}" class="account__link">Выйти из аккаунта</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <div class="account__tab">
+                    <div class="account__tab-header">
+                        <p class="account__tab-title">Реклама</p>
+                    </div>
+                    <div class="account__body">
+                        <form action="#" class="account__form form">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="form__button button">Опубликовать</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

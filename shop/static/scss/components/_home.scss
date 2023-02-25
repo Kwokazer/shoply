@@ -1,0 +1,27 @@
+.home {
+    background-color: #cee8e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh - 130px);
+    text-align: center;
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 50px;
+        font-weight: bold;
+        color: #222222;
+    }
+
+    &__description {
+        color: #465b52;
+        margin-bottom: 50px;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+}
