@@ -10,17 +10,6 @@ from rest_framework.response import Response
 from .serializers import *
 
 
-class UsersViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-    @action(methods=['get'], detail=True)
-    def cart(self, request, pk):
-        cart = Cart.objects.filter(user_id=pk)
-        data = {
-            'user': UserSerializer(User.objects.get(pk=pk)).data,
-            'cart': list(map(lambda x: {'product': ProductSerializer(x.product).data, 'count': x.count}, cart))
-        }
 
         return Response(data)
 
