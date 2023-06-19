@@ -5,10 +5,6 @@ from shop.models import *
 
 
 
-class ComponentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Component
-        fields = "__all__"
 
 
 class ProductSerializer(serializers.ModelSerializer):
