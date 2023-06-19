@@ -37,9 +37,7 @@ class CharacterSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description', 'products', 'photo', 'created_at')
 
 
-class OrderSerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True)
-    user = UserSerializer(read_only=True)
+
 
     class Meta:
         model = Order
