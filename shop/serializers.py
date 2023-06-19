@@ -16,12 +16,7 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description', 'price', 'count', 'photo', 'category', 'structure')
 
 
-class CharacterSerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True)
 
-    class Meta:
-        model = Character
-        fields = ('id', 'name', 'description', 'products', 'photo', 'created_at')
 
 
 class OrderSerializer(serializers.ModelSerializer):
