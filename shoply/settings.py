@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'std_1782_django',
-        'USER': 'std_1782_django',
-        'PASSWORD': 'std_1782_django',
-        'HOST': 'std-mysql.ist.mospolytech.ru',
-        'PORT': '3306'
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': ''
     }
 }
 
